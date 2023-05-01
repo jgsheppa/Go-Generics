@@ -5,14 +5,12 @@ func equals[T comparable](x, y T) bool {
 }
 
 func Dupes[T comparable](arr []T) bool {
-	for _, i := range arr {
-		for _, j := range arr {
-			if equals(i, j) {
-				return true
-			}
-			continue
+	seen := map[T]bool{}
+	for _, v := range arr {
+		if seen[v] {
+			return true
 		}
+		seen[v] = true
 	}
-
 	return false
 }

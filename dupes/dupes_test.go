@@ -20,7 +20,7 @@ func TestDupes_IntsHaveDuplicates(t *testing.T) {
 func TestDupes_IntsHaveNoDuplicates(t *testing.T) {
 	t.Parallel()
 	got := dupes.Dupes([]int{1, 2, 3})
-	want := true
+	want := false
 
 	if !cmp.Equal(want, got) {
 		t.Error(cmp.Diff(want, got))
@@ -40,7 +40,7 @@ func TestDupes_BoolsHaveDuplicates(t *testing.T) {
 func TestDupes_BoolsHaveNoDuplicates(t *testing.T) {
 	t.Parallel()
 	got := dupes.Dupes([]bool{true, false})
-	want := true
+	want := false
 
 	if !cmp.Equal(want, got) {
 		t.Error(cmp.Diff(want, got))
@@ -60,7 +60,7 @@ func TestDupes_StringsHaveDuplicates(t *testing.T) {
 func TestDupes_StringsHaveNoDuplicates(t *testing.T) {
 	t.Parallel()
 	got := dupes.Dupes([]string{"true", "false"})
-	want := true
+	want := false
 
 	if !cmp.Equal(want, got) {
 		t.Error(cmp.Diff(want, got))
